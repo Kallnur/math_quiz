@@ -1,0 +1,20 @@
+:root{
+    --bg-light: #FFF;
+    --bg-dark: #232323;
+    --main-text-color: #20303c;
+    --white-color: #FFF;
+    --blue-color: #7CACDA;
+    --bluergb-color-active: 55, 170, 255;
+    --btn-bef-bg: 23, 238 ,205;
+    --btn-aft-bg: 35, 255, 255;
+
+    --container-width: 90%;
+
+    --fs-1: 40px;
+
+
+    /* is-transition gradient */
+
+    --transition-gradient-start: #00F260;
+    --transition-gradient-end: #0575E6;
+}

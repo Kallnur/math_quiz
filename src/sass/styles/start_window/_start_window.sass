@@ -1,0 +1,62 @@
+.start-window
+    position: relative
+    height: 100%
+
+    &__body
+        position: relative
+        padding-top: 200px
+        height: 100%
+        +flex(column, center, center)
+        gap: 20px
+
+    &__icon-block 
+        position: relative
+        bottom: -25px
+        transform: translateX(80%)
+        animation: moveLineY 3s infinite linear
+
+        & img
+            width: 250px
+            filter: drop-shadow(30px 40px 7px rgba(var(--bluergb-color-active), .1))
+
+    &__icon-text
+        text-transform: capitalize
+        letter-spacing: 1px
+        +font('Montserrat', 600, 30px)
+        width: 100%
+        overflow: hidden
+        white-space: nowrap
+        animation: printMess 15s infinite linear
+
+        &-block 
+            position: absolute
+            top: 40px
+            left: -190%
+            padding: 15px 30px
+            min-width: 550px
+            box-shadow: 0 0 17px rgba(var(--bluergb-color-active), .2)
+
+    &__btn
+        box-shadow: 0 0 5px var(--blue-color)
+
+        &:hover, &:focus
+            box-shadow: 0 0 25px rgba(var(--bluergb-color-active), 1)
+
+
+@keyframes moveLineY
+    0%
+        transform: translateX(80%) translateY(0)
+    50% 
+        transform: translateX(80%) translateY(15px)
+    100% 
+        transform: translateX(80%) translateY(0)
+
+@keyframes printMess 
+    0%
+        width: 0
+    10% 
+        width: 100%
+    90%
+        width: 100%
+    100%
+        width: 0
