@@ -1,0 +1,57 @@
+.login-block
+    width: 30%
+    height: 100%
+    margin: 0 auto
+    +flex(row, center, center)
+
+    &__body
+        width: 100%
+
+    &__title
+        text-align: center
+        font-size: var(--fs-2)
+        margin-bottom: 30px
+
+    &__form-body
+        +flex(column, center, center)
+        gap: 30px
+
+    &__input
+        &-block 
+            position: relative
+            width: 100%
+        
+        position: relative
+        width: 100%
+        top: 0
+        left: 0
+        font-size: var(--fs-4)
+        letter-spacing: .5px
+
+        & + label
+            position: absolute
+            top: 50%
+            left: 15px
+            font-size: var(--fs-5)
+            transition: .3s
+            transform: translateY(-50%)
+            font-family: 'Montserrat'
+            font-weight: 600
+            letter-spacing: .5px
+            color: rgba(var(--sec-rbg-text), .8)
+
+        &:-webkit-autofill
+            transition: 1000s
+            
+        &:focus ~ label,
+        &:valid ~ label
+            top: -10px
+            left: 5px
+            font-size: var(--fs-6)
+            padding: 0 5px 0 8px
+            background: var(--white-color)
+            transform: translateY(0)
+            color: rgba(var(--sec-rbg-text), .5)
+
+    &__btn
+        

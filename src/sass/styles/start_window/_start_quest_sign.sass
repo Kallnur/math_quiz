@@ -1,0 +1,29 @@
+.start-window
+    &__login-title
+        width: 100%
+        text-align: center
+
+    &__question-login
+        +flex(row, center, center)
+        gap: 15px
+        row-gap: 30px
+        flex-wrap: wrap
+        transition: .3s
+
+    &__btn-sign-in,
+    &__btn-sign-up
+        width: 45%
+        text-transform: capitalize
+        box-shadow: 0 0 5px var(--blue-color)
+
+    &__btn-continue-quest
+        font-size: var(--fs-4)
+        text-transform: capitalize
+
+        &::after 
+            display: none
+            
+        +activeBottomLine
+
+        &:hover
+            color: var(--main-text-color)

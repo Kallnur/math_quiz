@@ -1,16 +1,19 @@
-export const appTransitionWindow = (prevWindow, nextWindow) => {
+const stubWindowClasses = {
+    default: 'is-transition',
+    active: 'is-transition--active'
+};
+
+const stubWindow = document.querySelector(`.${stubWindowClasses.default}`);
+
+export const appTransitionOpen = (prevWindow, nextWindow) => {
 
     const classWindowClose = 'd-none';
-    const stubWindowClasses = {
-        default: 'is-transition',
-        active: 'is-transition--active'
-    };
-
-    const stubWindow = document.querySelector(`.${stubWindowClasses.default}`);
-    stubWindow?.classList.add(stubWindowClasses.active);
+    stubWindow.classList.add(stubWindowClasses.active);
 
     if(prevWindow) prevWindow.classList.add(classWindowClose);
     if(nextWindow) nextWindow.classList.remove(classWindowClose);
+}
 
-    setTimeout(() => stubWindow?.classList.remove(stubWindowClasses.active), 600);
+export const appTransitionClose = () => {
+    setTimeout(() => stubWindow.classList.remove(stubWindowClasses.active), 600);
 }

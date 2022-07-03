@@ -1,0 +1,55 @@
+.main-menu
+    &__modes
+        +flex(row, center, center) 
+        padding: 15px 0
+        gap: 30px  
+        margin-bottom: 45px
+        width: 100%
+
+    &__game-modes
+        width: 100%
+        text-align: center
+        +flex(column, center, center) 
+
+    &__modes-title
+        font-size: var(--fs-2)
+        font-weight: 500
+        text-transform: capitalize
+        margin-bottom: 30px
+
+    &__game-mode
+        & input 
+            display: none
+
+            &:checked + label
+                box-shadow: 0 0 15px var(--blue-color-active)
+                background: var(--blue-color-active)
+                color: var(--white-color)
+                
+        & label
+            position: relative
+            padding: 10px 30px
+            box-shadow: 0 0 5px var(--blue-color)
+            text-transform: none
+            font-size: var(--fs-3-5)
+            letter-spacing: .8px 
+            cursor: pointer
+            transition: .3s
+
+            &:hover, &:focus
+                box-shadow: 0 0 10px var(--blue-color-active)
+
+    &__btn-start
+        font-size: var(--fs-3-5)
+        padding: 12px 45px
+        box-shadow: 0 0 5px var(--blue-color)
+        width: 70% 
+        text-transform: none
+        transition: .3s
+        cursor: pointer
+
+        &:hover, &:focus 
+            box-shadow: 0 0 10px var(--blue-color-active)
+
+        &:active 
+            background: var(--blue-color-active)

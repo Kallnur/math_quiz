@@ -1,20 +1,33 @@
 :root{
+    /* Colors */
     --bg-light: #FFF;
     --bg-dark: #232323;
     --main-text-color: #20303c;
+    --sec-text-color: #37444f;
+    --sec-rbg-text: 55, 68, 79;
     --white-color: #FFF;
     --blue-color: #7CACDA;
+    --blue-color-active: #37AAFF;
     --bluergb-color-active: 55, 170, 255;
     --btn-bef-bg: 23, 238 ,205;
     --btn-aft-bg: 35, 255, 255;
 
+    /* sizes */
     --container-width: 90%;
 
-    --fs-1: 40px;
+    /* font-sizes */
+    --fs: 17px;
+    --fs-1: 2.5rem;   
+    --fs-2: 2rem; 
+    --fs-3: 1.7rem;  
+    --fs-3-5: 1.5rem;  
+    --fs-4: 1.3rem;
+    --fs-5: 1rem;
+    --fs-6: .9rem;
 
 
     /* is-transition gradient */
 
-    --transition-gradient-start: #00F260;
+    --transition-gradient-start: #00F4D8;
     --transition-gradient-end: #0575E6;
 }

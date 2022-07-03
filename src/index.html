@@ -16,6 +16,12 @@
                         <div class="start-window__btn-block">
                             <button class="start-window__btn big-btn btn-start">Start</button>
                         </div>
+                        <div class="start-window__question-login d-none show-hide">
+                            <h1 class="start-window__login-title">Math Quis</h1>
+                            <button data-sign-method="sign-in" class="start-window__btn-sign-in sign-btn">Sign In</button>
+                            <button data-sign-method="sign-up" class="start-window__btn-sign-up sign-btn">Sign Up</button>
+                            <button data-sign-method="sign-quest" class="start-window__btn-continue-quest sign-btn">Continue As Quest</button>
+                        </div>
                         <div class="start-window__icon-block">
                             <img src="./assets/icons/icon_1.png" alt="Icon">
                             <div class="start-window__icon-text-block">
@@ -23,6 +29,112 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="sign-in login-block d-none">
+                    <div class="login-block__body">
+                        <h2 class="login-block__title">Hello Gamer, welcome back!</h2>
+                        <div class="login-block__form-block">
+                            <form>
+                                <div class="login-block__form-body">
+                                    <div class="login-block__input-block">
+                                        <input class="login-block__input def-input" required type="text" id="sign-name">
+                                        <label for="sign-name">name</label>
+                                    </div>
+                                    <div class="login-block__input-block">
+                                        <input class="login-block__input def-input" required type="text" id="sign-codeword">
+                                        <label for="sign-codeword">codeword</label>
+                                    </div>
+                                    <button data-method-sign="sign-in" class="login-block__btn get-btn">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-up login-block d-none">
+                    <div class="login-block__body">
+                        <h2 class="login-block__title">Let's Get Acquainted!</h2>
+                        <div class="login-block__form-block">
+                            <form>
+                                <div class="login-block__form-body">
+                                    <div class="login-block__input-block">
+                                        <input class="login-block__input def-input" required type="text" id="sign-name">
+                                        <label for="sign-name">name</label>
+                                    </div>
+                                    <div class="login-block__input-block">
+                                        <input class="login-block__input def-input" required type="text" id="sign-codeword">
+                                        <label for="sign-codeword">codeword</label>
+                                    </div>
+                                    <button data-method-sign="sign-up" class="login-block__btn get-btn">Sign Up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="sign-quest login-block d-none">
+                    <div class="login-block__body">
+                        <h2 class="login-block__title">Hello Gamer! Tell us your name?</h2>
+                        <div class="login-block__form-block">
+                            <form>
+                                <div class="login-block__form-body">
+                                    <div class="login-block__input-block">
+                                        <input class="login-block__input def-input" required type="text" id="sign-name">
+                                        <label for="sign-name">name</label>
+                                    </div>
+                                    <button data-method-sign="sign-quest" class="login-block__btn get-btn">Continue</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-menu d-none">
+                    <div class="main-menu__content">
+                        <div class="main-menu__user-block">
+                            <div class="main-menu__ava">
+                                <img src="./assets/images/ava/bart_ava.jpg" alt="avatar">
+                            </div>
+                            <div class="main-menu__user-info">
+                                <strong class="main-menu__name">Kalnur</strong>
+                                <span class="main-menu__balance">
+                                    Balance: <span class="main-menu__balance-val">777$</span>
+                                </span>
+                            </div>
+                            <div class="main-menu__leaderboard">
+                                <span class="main-menu__leaderboard-btn">Leaderboard</span>
+                            </div>
+                        </div>
+                        <div class="main-menu__game-modes">
+                            <h2 class="main-menu__modes-title">Choose your game mode:</h2>
+                            <div class="main-menu__modes">
+                                <div class="main-menu__game-mode">
+                                    <input type="radio" name="game-mode" id="game-mode-practcie" checked>
+                                    <label for="game-mode-practcie">Practice</label>
+                                </div>
+                                <div class="main-menu__game-mode">
+                                    <input type="radio" name="game-mode" id="game-mode-time-atack">
+                                    <label for="game-mode-time-atack">Time Attack</label>
+                                </div>
+                            </div>
+                            <button class="main-menu__btn-start">Let’s go!</button>
+                        </div>
+                        <div class="main-menu__rules">
+                            <div class="main-menu__rules-body">
+                                <span class="main-menu__rules-btn">don’t know rules? clicke here!</span>
+                                <div class="main-menu__rules-info">
+                                    <b class="main-menu__rules-title">It is Math Quis</b>
+                                    <span class="main-menu__rules-text">
+                                        Here can be your advertising! Here can be your advertising! Here can be your advertising1
+                                        Here can be your advertising! Here can be your advertising! Here can be your advertising1
+                                        Here can be your advertising! Here can be your advertising! Here can be your advertising1
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-prev-block d-none">
+                    <button class="btn-prev">
+                        <img src="./assets/icons/prevIcon.svg" alt="Prev"> Back
+                    </button>
                 </div>
             </div>
         </div>

@@ -20,3 +20,45 @@
     top: 50%
     left: 50%
     transform: translateX(-50%) translateY(-50%)
+
+=activeBottomLine
+    position: relative
+
+    &::before
+        position: absolute
+        content: ''
+        width: 100%
+        height: 2px
+        background: var(--blue-color)
+        top: auto
+        left: 0
+        transform: translateX(-101%)
+        bottom: 0
+
+    &:hover::before
+        transform: translateX(0)
+
+
+=fillBefore($bg: none)
+    position: absolute
+    content: ''
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: -1
+    transition: .3s
+    background: $bg
+
+=darkBg($bg)
+    &::before
+        position: fixed
+        content: ''
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: $bg
+        opacity: .7
+        z-index: -1
+        transition: .3s

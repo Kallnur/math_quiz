@@ -1,0 +1,89 @@
+.main-menu
+    height: 100%
+    +flex(column, center, center)
+
+    &__content
+        position: relative
+        +flex(column, center, center)
+        width: 40%
+        margin: 0 auto
+        gap: 30px
+
+    &__leaderboard
+        font-size: var(--fs-4)
+        text-transform: none
+        letter-spacing: .5px
+        margin-left: auto
+        cursor: pointer
+        transition: .3s
+        padding: 8px 26px
+        box-shadow: 0 0 3px var(--blue-color)
+
+        &:focus, &:hover
+            box-shadow: 0 0 6px var(--blue-color-active)
+
+        &:active 
+            background: var(--blue-color-active)
+    
+    &__rules
+        width: 100%
+        // position: absolute
+        bottom: -60px
+        margin: 0 auto
+        height: 50px
+        overflow: hidden
+        transition: .3s
+
+        &--active 
+            height: auto
+            background: #fff
+            +darkBg(#000)
+            box-shadow: 0 0 25px rgba(var(--bluergb-color-active), 1)
+
+            & .main-menu__rules-info
+                transform: none
+            
+            & .main-menu__rules-body
+                z-index: 10
+                background: #fff
+                padding: 40px
+                border-radius: 4px
+
+            & .main-menu__rules-btn
+                text-decoration: underline
+
+    &__rules-body
+        width: 100%
+        +flex(column, start, center)
+
+    &__rules-btn
+        cursor: pointer
+        width: 70%
+        transition: .3s
+        margin-bottom: 60px
+        text-align: right
+
+        &:focus, &:hover
+            text-decoration: underline
+
+    // &__rules-btn,
+    &__rules-title
+        display: block
+        text-align: right
+        z-index: 10
+        text-transform: capitalize
+        font-size: var(--fs-4)
+        margin-bottom: 20px 
+
+    &__rules-info
+        width: 100%
+        transform: translateY(100%)
+        transition: .3s
+        z-index: 10
+        
+    &__rules-text
+        color: var(--sec-text-color)
+        line-height: 28px
+
+@import './_user_block'
+@import './_modes'
