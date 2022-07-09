@@ -1,0 +1,63 @@
+.game-block__score-sum
+    position: relative
+    +flex(row, center, center)
+    gap: 10px
+
+    &--twitch
+        animation: twitchDec .2s 3 linear
+
+    &--inc
+        position: absolute
+        content: '+1'
+        color: #00F539
+        font-size: var(--fs-2)
+        left: 59%
+        animation: scoreInc .7s 1 linear both
+
+    &--dec
+        position: absolute
+        content: '-1'
+        color: #FF2B24
+        font-size: var(--fs-2)
+        left: 59%
+        animation: scoreDec .7s 1 linear both
+
+.game-block__field
+    transform: translateX(155%)
+
+    &--show
+        transform: none
+        transition: .3s
+
+    &--lieve
+        transform: translate(-200%)
+        transition: .3s
+
+
+.game-block__time-progress--active
+    animation: progressTime 3s linear infinite
+
+
+@keyframes scoreInc 
+    100%
+        transform: translateY(-100%)
+        color: transparent
+
+@keyframes scoreDec 
+    100%
+        transform: translateY(100%)
+        color: transparent
+        
+@keyframes twitchDec
+    0%
+        transform: translateX(0)
+    25% 
+        transform: translateX(2px)
+    50% 
+        transform: translateX(-2px)
+    100%
+        transform: translateX(0)
+
+@keyframes progressTime
+    100%
+        width: 0

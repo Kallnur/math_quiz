@@ -1,0 +1,30 @@
+.game-block--stub
+    
+    & *
+        z-index: -1
+
+    &::before
+        position: relative
+        content: 'Are You Ready?!'
+        color: var(--white-color)
+        +font('Lato', 700, 100px)
+        text-transform: uppercase
+        letter-spacing: 1.5px
+        word-spacing: 10px
+        position: fixed
+        top: 0
+        left: 0
+        bottom: 0
+        right: 0
+        background: rgba(0, 0, 0, .7)
+        +flex(row, center, center)
+        animation: stupAnimete 3s 1 both 
+
+@keyframes stupAnimete
+    0%
+        font-size: 100px // Nu Nichigo Strashnogo
+    50%
+        font-size: 30px // Nu Nichigo Strashnogo
+        content: 'Are You Ready?!'
+    100%
+        content: 'GO!!!'

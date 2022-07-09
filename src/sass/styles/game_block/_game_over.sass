@@ -1,0 +1,44 @@
+.game-over
+    position: fixed
+    padding: 50px
+    width: var(--block-content)
+    border-radius: 5px
+    box-shadow: 0px 4px 40px 1px rgba(var(--bluergb-color-active), 0.1)
+    text-align: center
+    +flex(column, center, center)
+    gap: 40px
+    background: var(--white-color)
+    transform: scale(0) translateY(100%)
+    transition: .2s linear
+    opacity: 0
+
+    &--show
+        transform: scale(1) translateY(0)
+        opacity: 1
+
+    &__title
+        font-size: calc(var(--fs-1) + 10px )
+        font-weight: 400
+        letter-spacing: 1px
+
+    &__score-txt, &__score
+        font-size: var(--fs-3)
+        display: block
+
+    &__score
+        margin: 10px 0 15px 
+        font-size: var(--fs-num)
+
+    &__result-desc
+        +flex(column, center, flex-start)
+        font-size: var(--fs-4)
+        gap: 10px
+        font-weight: 400
+
+    &__btns
+        width: 70%
+
+    &__btn
+        display: block
+        width: 100%
+        margin: 15px 0

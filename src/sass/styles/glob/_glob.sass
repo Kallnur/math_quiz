@@ -43,14 +43,18 @@
 .get-btn
     position: relative
     padding: 12px 35px
-    background: var(--blue-color)
+    background: var(--blue-color-active)
     color: var(--white-color)
     font-size: calc(var(--fs-5) + 3px)
     letter-spacing: .5px
     cursor: pointer
-    transition: .4s
+    transition: box-shadow .4s
     align-self: end
     border-radius: 4px
+    box-shadow: 0 0 5px var(--blue-color)
 
-    &:hover
-        background: var(--blue-color-active)
+    &:hover, &:focus
+        box-shadow: 0 0 12px var(--blue-color-active)
+
+    &:active 
+        background: #139ab8

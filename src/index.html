@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Math Quiz</title>
 </head>
 <body>
     
@@ -37,12 +37,12 @@
                             <form>
                                 <div class="login-block__form-body">
                                     <div class="login-block__input-block">
-                                        <input class="login-block__input def-input" required type="text" id="sign-name">
-                                        <label for="sign-name">name</label>
+                                        <input class="login-block__input def-input sign-name" required type="text" id="sign-in-name">
+                                        <label for="sign-in-name">name</label>
                                     </div>
                                     <div class="login-block__input-block">
-                                        <input class="login-block__input def-input" required type="text" id="sign-codeword">
-                                        <label for="sign-codeword">codeword</label>
+                                        <input class="login-block__input def-input sign-codeword" required type="text" id="sign-in-codeword">
+                                        <label for="sign-in-codeword">codeword</label>
                                     </div>
                                     <button data-method-sign="sign-in" class="login-block__btn get-btn">Sign in</button>
                                 </div>
@@ -57,12 +57,12 @@
                             <form>
                                 <div class="login-block__form-body">
                                     <div class="login-block__input-block">
-                                        <input class="login-block__input def-input" required type="text" id="sign-name">
-                                        <label for="sign-name">name</label>
+                                        <input class="login-block__input def-input sign-name" required type="text" id="sign-up-name">
+                                        <label for="sign-up-name">name</label>
                                     </div>
                                     <div class="login-block__input-block">
-                                        <input class="login-block__input def-input" required type="text" id="sign-codeword">
-                                        <label for="sign-codeword">codeword</label>
+                                        <input class="login-block__input def-input sign-codeword" required type="text" id="sign-up-codeword">
+                                        <label for="sign-up-codeword">codeword</label>
                                     </div>
                                     <button data-method-sign="sign-up" class="login-block__btn get-btn">Sign Up</button>
                                 </div>
@@ -77,8 +77,8 @@
                             <form>
                                 <div class="login-block__form-body">
                                     <div class="login-block__input-block">
-                                        <input class="login-block__input def-input" required type="text" id="sign-name">
-                                        <label for="sign-name">name</label>
+                                        <input class="login-block__input def-input sign-name" required type="text" id="sign-quest-name">
+                                        <label for="sign-quest-name">name</label>
                                     </div>
                                     <button data-method-sign="sign-quest" class="login-block__btn get-btn">Continue</button>
                                 </div>
@@ -90,12 +90,12 @@
                     <div class="main-menu__content">
                         <div class="main-menu__user-block">
                             <div class="main-menu__ava">
-                                <img src="./assets/images/ava/bart_ava.jpg" alt="avatar">
+                                <img class="main-menu__ava-img" src="" alt="avatar">
                             </div>
                             <div class="main-menu__user-info">
-                                <strong class="main-menu__name">Kalnur</strong>
+                                <strong class="main-menu__name"></strong>
                                 <span class="main-menu__balance">
-                                    Balance: <span class="main-menu__balance-val">777$</span>
+                                    Balance: <span class="main-menu__balance-val"></span>$
                                 </span>
                             </div>
                             <div class="main-menu__leaderboard">
@@ -112,6 +112,10 @@
                                 <div class="main-menu__game-mode">
                                     <input type="radio" name="game-mode" id="game-mode-time-atack">
                                     <label for="game-mode-time-atack">Time Attack</label>
+                                </div>
+                                <div class="main-menu__game-mode">
+                                    <input type="radio" name="game-mode" id="game-mode-competition">
+                                    <label for="game-mode-competition">Competition</label>
                                 </div>
                             </div>
                             <button class="main-menu__btn-start">Let’s go!</button>
@@ -131,6 +135,84 @@
                         </div>
                     </div>
                 </div>
+                <div class="game-block d-none">
+                    <div class="game-block__content">
+                        <div class="game-block__info-block">
+                            <div class="game-block__user-block">
+                                <span class="game-block__user-name"></span>
+                                <span class="game-block__mode"></span>
+                                <h3 class="game-block__lvl">Level 2</h3>
+                            </div>
+                            <div class="game-block__time-block">
+                                <div class="game-block__timer">
+                                    <span class="game-block__time-min">00</span>
+                                    <span>:</span>
+                                    <span class="game-block__time-sec">00</span>
+                                </div>
+                                <button class="game-block__stop-btn get-btn">Stop game</button>
+                            </div>
+                        </div>
+    
+                        <div class="game-block__field game-block__field--show" data-show-hide="true">
+                            <span class="game-block__num-1"></span>
+                            <span class="game-block__operator"></span>
+                            <span class="game-block__num-2"></span>
+                            <span class="game-block__equ">=</span>
+                            <input type="number" class="game-block__answer">
+                            <div class="game-block__time-progress"></div>
+                        </div>
+    
+                        <div class="game-block__score-info">
+                            <span class="game-block__score-txt" data-after="after">Your score:</span>
+                            <div class="game-block__score-sum">
+                                <span class="game-block__score">0</span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="game-block__game-over game-over">
+                        <h1 class="game-over__title">Game Over</h1>
+                        <div class="game-over__score-block">
+                            <span class="game-over__score-txt">Your score:</span>
+                            <span class="game-over__score"></span>
+                        </div>
+                        <div class="game-over__result-desc">
+                            <span class="game-over__correct-score">Correct: 
+                                <span></span>
+                            </span>
+                            <span class="game-over__incorrect-score"> Incorrect: 
+                                <span></span>
+                            </span>
+                        </div>
+                        <div class="game-over__btns">
+                            <button class="game-over__btn get-btn">Leaderboard</button>
+                            <button class="game-over__btn get-btn play-again">Main Mneu</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="leaderboard d-none">
+                    <div class="leaderboard__content">
+                        <button class="leaderboard__btn-prev">
+                            <img src="./assets/icons/prevIcon.svg" alt="Prev"> Back to Main Menu
+                        </button>
+                        <h1 class="leaderboard__title">LEADERBOARD</h1>
+                        <div class="leaderboard__mode-block">
+                            <span class="leaderboard__mode-txt">Game mode:</span>
+                            <select id="leaderboard-select">
+                                <option value="timeAttack">Time Attack</option>
+                                <option value="practice">Practice</option>
+                            </select>
+                        </div>
+
+                        <ul class="leaderboard__list">
+                            <li class="leaderboard__item">
+                                <span class="leaderboard__name">Kalnur</span>
+                                <span class="leaderboard__score">40</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
                 <div class="btn-prev-block d-none">
                     <button class="btn-prev">
                         <img src="./assets/icons/prevIcon.svg" alt="Prev"> Back

@@ -7,12 +7,11 @@ export const appTransitionBlock = (closeElem, showElem, move = true) => {
 
     if(move){
         setTimeout(() => {
-            closeElem.classList.toggle(hideClasses.display);
+            closeElem.classList.add(hideClasses.display);
             showElem.classList.remove(hideClasses.scale, hideClasses.display)
         }, 500)
-    }
-    else{
-        closeElem.classList.toggle(hideClasses.display);
+    } else{
+        closeElem.classList.add(hideClasses.display);
         showElem.classList.remove(hideClasses.scale)
     }
 

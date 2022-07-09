@@ -14,6 +14,7 @@
 
     /* sizes */
     --container-width: 90%;
+    --block-content: 40%;
 
     /* font-sizes */
     --fs: 17px;
@@ -24,6 +25,7 @@
     --fs-4: 1.3rem;
     --fs-5: 1rem;
     --fs-6: .9rem;
+    --fs-num: 5rem;
 
 
     /* is-transition gradient */
