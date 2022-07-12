@@ -13,6 +13,11 @@
         height: 70px
         border-radius: 50%
         overflow: hidden
+        transition: .3s
+        cursor: pointer
+
+        &:hover, &:focus 
+            box-shadow: 0 0 10px var(--blue-color-active)
 
         & img
             width: 100%
@@ -24,6 +29,7 @@
         font-weight: 700
         font-size: var(--fs-4)
         letter-spacing: .8px
+        cursor: pointer
 
     &__balance
         font-size: var(--fs-5)

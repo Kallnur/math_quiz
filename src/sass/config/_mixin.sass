@@ -62,3 +62,18 @@
         opacity: .7
         z-index: -1
         transition: .3s
+
+=myScrollbar 
+    &::-webkit-scrollbar
+        background: none
+        box-shadow: 0 0 7px var(--blue-color-active)
+        width: 10px
+        border-radius: 4px 
+
+    &::-webkit-scrollbar-button
+        display: none
+
+    &::-webkit-scrollbar-thumb
+        background: rgba(var(--bluergb-color-active), .4)
+        border-radius: 2px 
+        opacity: .1

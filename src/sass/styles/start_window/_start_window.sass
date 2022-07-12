@@ -1,6 +1,7 @@
 .start-window
     position: relative
     height: 100%
+    +flex(column, center, center)
 
     &__body
         position: relative
@@ -12,7 +13,7 @@
     &__icon-block 
         position: relative
         bottom: -25px
-        transform: translateX(80%)
+        transform: translateX(100%)
         animation: moveLineY 3s infinite linear
 
         & img
@@ -22,7 +23,7 @@
     &__icon-text
         text-transform: capitalize
         letter-spacing: 1px
-        +font('Montserrat', 600, 30px)
+        +font('Montserrat', 600, var(--fs-2))
         width: 100%
         overflow: hidden
         white-space: nowrap
@@ -50,11 +51,11 @@
 
 @keyframes moveLineY
     0%
-        transform: translateX(80%) translateY(0)
+        transform: translateX(100%) translateY(0)
     50% 
-        transform: translateX(80%) translateY(15px)
+        transform: translateX(100%) translateY(15px)
     100% 
-        transform: translateX(80%) translateY(0)
+        transform: translateX(100%) translateY(0)
 
 @keyframes printMess 
     0%

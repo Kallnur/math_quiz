@@ -1,0 +1,44 @@
++mediaMaxW(425px)
+
+    .big-btn
+        padding: 16px 100px
+    
+    .sign-btn
+        width: 100%
+
+    .login-block
+        width: 95%
+
+    .main-menu
+        &__modes
+            flex-direction: column
+            gap: 40px  
+
+        &__game-mode
+            width: 100% 
+
+            & label
+                width: 80%
+
+        &__leaderboard
+            position: absolute
+            left: 0
+            bottom: 0
+            transform: translateY(150%)
+
+        &__btn-start
+            width: 100%
+
+    .game-over
+        padding: 50px 20px
+
+    #leaderboard-select
+        font-size: var(--fs-6)
+
+    .leaderboard
+        &__mode-block
+            +flex(column, center, center)
+            gap: 20px
+
+        &__btn-prev
+            font-size: var(--fs-5)

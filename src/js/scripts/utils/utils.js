@@ -61,3 +61,22 @@ export const newNums = (minNum, maxNum, mathOperators) => {
         operator: newOperator
     }
 }
+
+export const timeRenderForLabel = (labValue) => {
+    if( labValue == '00:30' ) return {
+        min: 0,
+        sec: 30
+    } 
+    else if( labValue == '01:00' ) return {
+        min: 1,
+        sec: 0
+    }
+    else if( labValue == '01:30' ) return {
+        min: 1,
+        sec: 30
+    }
+    else if( labValue == '02:00' ) return {
+        min: 2,
+        sec: 0
+    }
+}

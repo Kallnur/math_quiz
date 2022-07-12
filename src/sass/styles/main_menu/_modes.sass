@@ -3,8 +3,10 @@
         +flex(row, center, center) 
         padding: 15px 0
         gap: 30px  
+        row-gap: 50px
         margin-bottom: 45px
         width: 100%
+        flex-wrap: wrap
 
     &__game-modes
         width: 100%
@@ -35,6 +37,7 @@
             letter-spacing: .8px 
             cursor: pointer
             transition: .3s
+            white-space: nowrap
 
             &:hover, &:focus
                 box-shadow: 0 0 10px var(--blue-color-active)

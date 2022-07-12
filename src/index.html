@@ -134,6 +134,70 @@
                             </div>
                         </div>
                     </div>
+                    <div class="main-menu__setings-block setings-block">
+                        <button class="setings-block__close-btn">
+                            <img src="./assets/icons/close.svg" alt="close">
+                        </button>
+                        <div class="setings-block__body">
+                            <h2 class="setings-block__subtitle">Avatars</h2>
+                            <div class="setings-block__avatars"></div>
+                            <div class="setings-block__game-setings">
+                                <h2 class="setings-block__subtitle">Time Attack Times</h2>
+                                <div class="setings-block__game-times">
+                                    <div class="main-menu__game-mode setings-block__sel-time">
+                                        <input type="radio" name="timeAttack-time" id="time-attack-30">
+                                        <label for="time-attack-30">00:30</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__sel-time">
+                                        <input type="radio" name="timeAttack-time" id="time-attack-1-00">
+                                        <label for="time-attack-1-00">01:00</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__sel-time">
+                                        <input type="radio" name="timeAttack-time" id="time-attack-1-30" checked>
+                                        <label for="time-attack-1-30">01:30</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__sel-time">
+                                        <input type="radio" name="timeAttack-time" id="time-attack-2-00">
+                                        <label for="time-attack-2-00">02:00</label>
+                                    </div>
+                                </div>
+                                <h2 class="setings-block__subtitle">Task Interval</h2>
+                                <div class="setings-block__game-times">
+                                    <div class="main-menu__game-mode setings-block__task-time">
+                                        <input type="radio" name="timeAttack-task-time" id="time-attack-task-3" checked>
+                                        <label for="time-attack-task-3">3 sec</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__task-time">
+                                        <input type="radio" name="timeAttack-task-time" id="time-attack-task-5">
+                                        <label for="time-attack-task-5">5 sec</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__task-time">
+                                        <input type="radio" name="timeAttack-task-time" id="time-attack-task-10">
+                                        <label for="time-attack-task-10">10 sec</label>
+                                    </div>
+                                </div>
+                                <h2 class="setings-block__subtitle">Game Level</h2>
+                                <div class="setings-block__game-times">
+                                    <div class="main-menu__game-mode setings-block__task-time">
+                                        <input type="radio" name="timeAttack-task-time" id="time-attack-task-3" checked>
+                                        <label for="time-attack-task-3">1 Level</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__task-time">
+                                        <input type="radio" name="timeAttack-task-time" id="time-attack-task-5">
+                                        <label for="time-attack-task-5">2 Level</label>
+                                    </div>
+                                    <div class="main-menu__game-mode setings-block__task-time">
+                                        <input type="radio" name="timeAttack-task-time" id="time-attack-task-10">
+                                        <label for="time-attack-task-10">3 Level</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h2 class="setings-block__subtitle">Exit</h2>
+                            <div class="setings-block__sign-out-block">
+                                <button class="setings-block__sign-out get-btn">sign out</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="game-block d-none">
                     <div class="game-block__content">
@@ -171,22 +235,24 @@
 
                     </div>
                     <div class="game-block__game-over game-over">
-                        <h1 class="game-over__title">Game Over</h1>
-                        <div class="game-over__score-block">
-                            <span class="game-over__score-txt">Your score:</span>
-                            <span class="game-over__score"></span>
-                        </div>
-                        <div class="game-over__result-desc">
-                            <span class="game-over__correct-score">Correct: 
-                                <span></span>
-                            </span>
-                            <span class="game-over__incorrect-score"> Incorrect: 
-                                <span></span>
-                            </span>
-                        </div>
-                        <div class="game-over__btns">
-                            <button class="game-over__btn get-btn">Leaderboard</button>
-                            <button class="game-over__btn get-btn play-again">Main Mneu</button>
+                        <div class="game-over__body">
+                            <h1 class="game-over__title">Game Over</h1>
+                            <div class="game-over__score-block">
+                                <span class="game-over__score-txt">Your score:</span>
+                                <span class="game-over__score"></span>
+                            </div>
+                            <div class="game-over__result-desc">
+                                <span class="game-over__correct-score">Correct: 
+                                    <span></span>
+                                </span>
+                                <span class="game-over__incorrect-score"> Incorrect: 
+                                    <span></span>
+                                </span>
+                            </div>
+                            <div class="game-over__btns">
+                                <button class="game-over__btn get-btn game-over__btn--leaderboard">Leaderboard</button>
+                                <button class="game-over__btn get-btn play-again">Main Mneu</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,17 +265,14 @@
                         <div class="leaderboard__mode-block">
                             <span class="leaderboard__mode-txt">Game mode:</span>
                             <select id="leaderboard-select">
-                                <option value="timeAttack">Time Attack</option>
                                 <option value="practice">Practice</option>
+                                <option value="timeAttack">Time Attack</option>
+                                <option value="competition">Competition</option>
                             </select>
                         </div>
 
-                        <ul class="leaderboard__list">
-                            <li class="leaderboard__item">
-                                <span class="leaderboard__name">Kalnur</span>
-                                <span class="leaderboard__score">40</span>
-                            </li>
-                        </ul>
+                        <ul class="leaderboard__list leaderboard__list--practice"></ul>
+                        <ul class="leaderboard__list leaderboard__list--timeAttack d-none"></ul>
                     </div>
                 </div>
 

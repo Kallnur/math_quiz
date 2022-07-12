@@ -2,7 +2,9 @@ import { practcieGame } from "../../games/practiceGame";
 import { timeAttackGame } from "../../games/timeAttackGame";
 import { quizRulesAnimate } from "../../interactiveElements/quizRulesAnimate";
 import { getDataLocalStorage } from "../../utils/localStorage";
+import { timeRenderForLabel } from "../../utils/utils";
 import { leaderboardFunc } from "../leaderboard/leaderboard";
+import { gameSetings } from "./gameSetings";
 
 export const mainMenu = (userId) => {
 
@@ -23,14 +25,16 @@ export const mainMenu = (userId) => {
         competition: 'game-mode-competition'
     };
 
-    let score = 1;
+    const trueTimesTimeAttack = () => {
+        const tagTimeAttackTime = document.querySelector('.setings-block__sel-time input:checked + label');
+        const timeAttackTime = timeRenderForLabel(tagTimeAttackTime.textContent);
 
-    const scoreNew = setTimeout(() => {
-        const newScore = score +1;
-        return newScore
-    }, 1000)
+        return timeAttackTime;
+    }
 
-    console.log(scoreNew);
+
+    tagUserName.addEventListener('click', gameSetings);
+    tagUserAvatar.addEventListener('click', gameSetings);
 
     prevBlockBtn.classList.add('d-none')
 
@@ -45,7 +49,10 @@ export const mainMenu = (userId) => {
     tagBtnStart.addEventListener('click', () => {
         const gameMode = document.querySelector('.main-menu__modes input:checked');
         if(gameMode.id == gameModesId.practice) practcieGame(user ,mainMenu, gameFiled, userTransitionHistory);
-        if(gameMode.id == gameModesId.timeAttack) timeAttackGame(user ,mainMenu, gameFiled, userTransitionHistory);
+        if(gameMode.id == gameModesId.timeAttack) {
+            const timeAttackTime = trueTimesTimeAttack();
+            timeAttackGame(user ,mainMenu, gameFiled, userTransitionHistory, timeAttackTime)
+        };
         if(gameMode.id == gameModesId.competition) console.log(gameMode.id);
     })
 

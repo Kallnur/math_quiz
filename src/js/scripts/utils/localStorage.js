@@ -21,10 +21,33 @@ export const setDataLocalStorage = (key, obj) => {
 
 }
 
-export const getDataLocalStorage = (key, obj) => {
+export const getDataLocalStorage = (key) => {
     return JSON.parse(localStorage.getItem(key))
 }
 
 export const deleteDataLocalStorage = (key) => {
     localStorage.removeItem(key)
+}
+
+export const changeArrInLocal = (key, obj) => {
+
+    const arr = getDataLocalStorage(key);
+
+    const newArr = arr?.map(localObj => {
+        if(localObj.id == obj.id) return obj;
+        return localObj;
+    });
+
+    localStorage.setItem(key, JSON.stringify(newArr));
+}
+
+export const changeObjInLocal = (key, obj) => {
+    const arrInLocal = JSON.parse(localStorage.getItem(key));    
+
+    const newArr = arrInLocal?.map(localObj => {
+        if(localObj.id == obj.id) return obj;
+        return localObj;
+    });
+
+    localStorage.setItem(key, JSON.stringify(newArr));
 }

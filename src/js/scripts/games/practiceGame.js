@@ -21,7 +21,7 @@ export const practcieGame = (user, mainMenu, gameFiled, userTransitionHistory) =
 
     const mathOperators = ['/']; //, '*', '+', '-'
     const minNum = 1;
-    const maxNum = 10;
+    const maxNum = 1;
     const mode = 'Practice'
 
     const score = {

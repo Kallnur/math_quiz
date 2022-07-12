@@ -1,0 +1,53 @@
++mediaMaxW(768px)
+
+    .sign-btn
+        width: 48%
+
+    .start-window
+        &__icon-text-block
+            display: none
+
+        
+        &__icon-block
+            animation: moveLineY 3s infinite linear
+            bottom: 0
+            transform: translateX(40%)
+            
+
+            & img 
+                width: 190px
+                margin-top: 0
+
+        &__btn-continue-quest
+            width: 80%
+
+    .main-menu
+        &__user-block
+            position: relative
+            gap: 40px  
+
+        &__leaderboard
+            position: absolute
+            left: 0
+            bottom: 0
+            transform: translateY(150%)
+
+    .game-block
+        &__field
+            gap: 20px
+            padding-left: 0
+
+        &__answer
+            min-width: 70px
+
+        &__stop-btn
+            padding: 10px 20px
+
+
+@keyframes moveLineY
+    0%
+        transform: translateX(40%) translateY(0)
+    50% 
+        transform: translateX(40%) translateY(15px)
+    100% 
+        transform: translateX(40%) translateY(0)

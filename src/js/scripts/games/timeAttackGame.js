@@ -4,7 +4,7 @@ import { scoreDecSpan, scoreIncSpan } from "../utils/domElem";
 import { funcTransitionBlock, newNums, toggleClassTimeout } from "../utils/utils";
 import { gameOver } from "./gameOver";
 
-export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory) => {
+export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory, timerTime) => {
 
     const gameFilerd = document.querySelector('.game-block__field');
     const tagUserName = document.querySelector('.game-block__user-name');
@@ -18,11 +18,45 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory)
     const tagTimerBlock = document.querySelector('.game-block__timer');
     const tagProgressTime = document.querySelector('.game-block__time-progress');
     const tagStopGame   = document.querySelector('.game-block__stop-btn');
+    const tagSpanMin = document.querySelector('.game-block__time-min');
+    const tagSpanSec = document.querySelector('.game-block__time-sec');
 
-    const mathOperators = ['/']; //, '*', '+', '-'
-    const minNum = 10;
-    const maxNum = 100;
+    const mathOperators = ['/','*', '+', '-'];
+    const minNum = 1;
+    const maxNum = 20;
+    let gameEndTimer;
+
+    const endTime = timerTime.min * 60 + timerTime.sec;
+
+    tagSpanMin.textContent = String(timerTime.min).padStart(2, '0');
+    tagSpanSec.textContent = String(timerTime.sec).padStart(2, '0');
+
+    const renderItemTimer = (tagMin, tagSec, timeObj) => {
+
+        const timer = setInterval(() => {
+
+            let allTime = timeObj.min * 60 + timeObj.sec;
+
+            allTime -= 1;
+
+            if(allTime > 59) {
+                timeObj.min = Math.floor(allTime / 60);
+                timeObj.sec = Math.floor(allTime - timeObj.min * 60);
+            } else {
+                timeObj.min = 0;
+                timeObj.sec = allTime;
+            }
+
+            tagMin.textContent = String(timeObj.min).padStart(2, '0');
+            tagSec.textContent = String(timeObj.sec).padStart(2, '0');
+        }, 1000)
+
+        return timer;
+    }
+
     const mode  = 'Time Attack';
+
+    tagTimerBlock.classList.remove('d-none');
 
     const score = {
         total: 0,
@@ -96,6 +130,10 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory)
 
         tagStopGame.addEventListener('click', stopGame);
 
+        setTimeout(stopGame, 1000 * endTime);
+
+        gameEndTimer = renderItemTimer(tagSpanMin, tagSpanSec, timerTime)
+
     }, 3000)
 
 
@@ -103,13 +141,13 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory)
         writtingAnswer(e);
 
         if(e.key === 'Enter' && tagUserAnswer.value.length) {
-            tagProgressTime.style.animationName = 'none';
+            tagProgressTime.classList.remove('game-block__time-progress--active');
             clearInterval(gameTimer)
 
             userAnswerEquality();
 
             setTimeout(() => {
-                tagProgressTime.style.animationName = 'progressTime';
+                tagProgressTime.classList.add('game-block__time-progress--active');
                 gameTimer = appGameTimer(userAnswerEquality, 1000 * 3);
             }, 50);
         };
@@ -117,7 +155,11 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory)
 
     function stopGame () {
         clearInterval(gameTimer);
+        clearInterval(gameEndTimer);
+
         window.removeEventListener('keypress', timeAttackGameFunc);
+        tagStopGame.removeEventListener('click', stopGame);
+
         tagProgressTime.classList.remove('game-block__time-progress--active');
         gameOver(user, score, userTransitionHistory, mode)
     }
