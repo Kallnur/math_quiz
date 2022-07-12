@@ -25,12 +25,20 @@ export const mainMenu = (userId) => {
         competition: 'game-mode-competition'
     };
 
-    const trueTimesTimeAttack = () => {
-        const tagTimeAttackTime = document.querySelector('.setings-block__sel-time input:checked + label');
-        const timeAttackTime = timeRenderForLabel(tagTimeAttackTime.textContent);
+    // const trueTimesTimeAttack = trueTimesGame('sel-time', timeRenderForLabel);
 
-        return timeAttackTime;
-    }
+    // const trueTimesTaskAttack = trueTimesGame('task-time', (value) => {
+    //     if(value.includes('3')) return 1000 * 3
+    //     else if(value.includes('5')) return 1000 * 5
+    //     else if(value.includes('10')) return 1000 * 10;
+    // }) 
+
+    // const trueTimesTaskAttack = () => {
+    //     const tagTimeAttackTime = document.querySelector('.setings-block__sel-time input:checked + label');
+    //     const timeAttackTime = timeRenderForLabel(tagTimeAttackTime.textContent);
+
+    //     return timeAttackTime;
+    // }
 
 
     tagUserName.addEventListener('click', gameSetings);
@@ -50,8 +58,18 @@ export const mainMenu = (userId) => {
         const gameMode = document.querySelector('.main-menu__modes input:checked');
         if(gameMode.id == gameModesId.practice) practcieGame(user ,mainMenu, gameFiled, userTransitionHistory);
         if(gameMode.id == gameModesId.timeAttack) {
-            const timeAttackTime = trueTimesTimeAttack();
-            timeAttackGame(user ,mainMenu, gameFiled, userTransitionHistory, timeAttackTime)
+
+            const timeAttackTime = trueTimesGame('sel-time', timeRenderForLabel);
+            const taskTime = trueTimesGame('task-time', (value) => {
+
+                if(value.includes('3')) return 1000 * 3
+                else if(value.includes('5')) return 1000 * 5
+                else if(value.includes('10')) return 1000 * 10;
+
+            }) 
+            
+            timeAttackGame(user ,mainMenu, gameFiled, userTransitionHistory, timeAttackTime, taskTime)
+
         };
         if(gameMode.id == gameModesId.competition) console.log(gameMode.id);
     })
@@ -59,6 +77,13 @@ export const mainMenu = (userId) => {
     tagLeaderboard.addEventListener('click', () => {
         leaderboardFunc(mainMenu);
     })
+
+    function trueTimesGame (className, func){
+        const tagTimeAttackTime = document.querySelector(`.setings-block__${className} input:checked + label`);
+        const timeAttackTime = func(tagTimeAttackTime.textContent);
+
+        return timeAttackTime;
+    }
 
     quizRulesAnimate()
 }

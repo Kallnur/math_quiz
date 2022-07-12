@@ -4,7 +4,7 @@ import { scoreDecSpan, scoreIncSpan } from "../utils/domElem";
 import { funcTransitionBlock, newNums, toggleClassTimeout } from "../utils/utils";
 import { gameOver } from "./gameOver";
 
-export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory, timerTime) => {
+export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory, timerTime, taskTime) => {
 
     const gameFilerd = document.querySelector('.game-block__field');
     const tagUserName = document.querySelector('.game-block__user-name');
@@ -20,6 +20,7 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory,
     const tagStopGame   = document.querySelector('.game-block__stop-btn');
     const tagSpanMin = document.querySelector('.game-block__time-min');
     const tagSpanSec = document.querySelector('.game-block__time-sec');
+    tagProgressTime.style.animationDuration = timerTime;
 
     const mathOperators = ['/','*', '+', '-'];
     const minNum = 1;
@@ -124,7 +125,7 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory,
     setTimeout(() => {
         tagProgressTime.classList.add('game-block__time-progress--active');
 
-        gameTimer = appGameTimer(userAnswerEquality, 1000 * 3)
+        gameTimer = appGameTimer(userAnswerEquality, taskTime)
 
         window.addEventListener('keypress', timeAttackGameFunc);
 
@@ -148,7 +149,7 @@ export const timeAttackGame = (user, mainMenu, gameFiled, userTransitionHistory,
 
             setTimeout(() => {
                 tagProgressTime.classList.add('game-block__time-progress--active');
-                gameTimer = appGameTimer(userAnswerEquality, 1000 * 3);
+                gameTimer = appGameTimer(userAnswerEquality, taskTime);
             }, 50);
         };
     }
